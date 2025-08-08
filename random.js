@@ -1,0 +1,7 @@
+const randomNumber=parseInt(Math.random()*100+1)
+const button=document.querySelector('.button')
+const userinput=document.querySelector('.input-box')
+const guesslot=document.querySelector('.perviousgues')
+const result=document.querySelector('.rem')
+const lower_high=document.querySelector('.lower-hi')
+const start_over=document.querySelector('.holding-perviousguess')
