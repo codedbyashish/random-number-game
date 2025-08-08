@@ -21,13 +21,41 @@ if(playgame){
 
 function validateGuess(guess){
     //  valdition of game
-     
-
+     if(isNaN(guess)){
+        alert('Please Enter the valid Number ')
+     }else if(guess< 1){
+      alert('Please Enter a number more than 1 ')
+     }else if(guess>100){
+        alert('Please Enter a number less than  100')
+     }else{
+        prevguess.push(guess)
+        if(numguess===11){
+           dispalyguess(guess)
+           displayMessGage(`Game Over. Random number was ${randomNumber}`)
+           endgame()
+        }else{
+            dispalyguess(guess)
+            checkguess(guess)
+        }
+     }
 }
 function checkguess(guess){
     //checking the guess
+    if(guess===randomNumber){
+      displayMessGage(`You guessed it right `)
+      endgame()
+    }else if(guess<randomNumber){
+        displayMessGage(`Number is TOOOOO low`)
+    }else if(guess>randomNumber){
+       displayMessGage(`Number is TOOO High`)
+    }
 }
 function dispalyguess(guess){
+  userinput.value= ' '
+  guesslot.innerHTML+=`${guess}`
+  numguess++;
+  remainig.innerHTML=`${10-numguess}`
+  
 
 }
 
