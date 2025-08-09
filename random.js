@@ -1,10 +1,12 @@
 const randomNumber=parseInt(Math.random()*100+1)
-const button=document.querySelector('.button')
-const userinput=document.querySelector('.input-box')
+const button=document.querySelector('.button button')
+const userinput=document.querySelector('.input-box input')
 const guesslot=document.querySelector('.perviousgues')
 const result=document.querySelector('.rem')
 const lower_high=document.querySelector('.lower-hi')
 const start_over=document.querySelector('.holding-perviousguess')
+const remainig = document.querySelector('.rem');
+
 
 const p=document.createElement('progress')
 let prevguess=[]
@@ -42,17 +44,17 @@ function validateGuess(guess){
 function checkguess(guess){
     //checking the guess
     if(guess===randomNumber){
-      displayMessGage(`You guessed it right `)
+      displayMessGage(`🎉 Winner! You guessed it perfectly! `)
       endgame()
     }else if(guess<randomNumber){
-        displayMessGage(`Number is TOOOOO low`)
+        displayMessGage(`Too low! Maybe your number is hiding up high 😉`)
     }else if(guess>randomNumber){
-       displayMessGage(`Number is TOOO High`)
+       displayMessGage(`Too high! You might hit the clouds ☁️`)
     }
 }
 function dispalyguess(guess){
-  userinput.value= ' '
-  guesslot.innerHTML+=`${guess}`
+  userinput.value= ''
+  guesslot.innerHTML+=`${guess}, `
   numguess++;
   remainig.innerHTML=`${10-numguess}`
   
@@ -60,7 +62,7 @@ function dispalyguess(guess){
 }
 
 function displayMessGage(messgae){
-
+lower_high.innerHTML=`<h2>${messgae}</h2>`
 }
 function newgame(){
 
