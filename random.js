@@ -85,7 +85,7 @@ newgame.addEventListener('click',function(){
   randomNumber=parseInt(Math.random()*100+1)
   prevguess=[]
   numguess=1
-  guesslot.innerHTML=''
+  guesslot.innerHTML=`Pervious guess :${''}`
   remainig.innerHTML=`Attempts: 10/10`
   userinput.removeAttribute('disabled')
   button.removeAttribute('disabled');
