@@ -35,7 +35,7 @@ function validateGuess(guess){
         prevguess.push(guess)
         if(numguess===11){
            dispalyguess(guess)
-           displayMessGage(`Game Over. Random number was ${randomNumber}`)
+           displayMessGage(`Game Over! Random number was ${randomNumber}`)
            endgame()
         }else{
             dispalyguess(guess)
@@ -58,7 +58,7 @@ function dispalyguess(guess){
   userinput.value= ''
   guesslot.innerHTML+=`${guess}, `
   numguess++;
-  remainig.innerHTML=`Attmpets: ${10-numguess}/10`
+  remainig.innerHTML=`Attmpets: ${11-numguess}/10`
   
 
 }
@@ -73,7 +73,7 @@ userinput.value=''
 userinput.setAttribute('disabled','')
 button.setAttribute('disabled','')
 const p = document.createElement('div');
-p.classList.add('button')
+p.classList.add('newgame-container')
 p.innerHTML='<h2 id="newgame">Start New Game</h2>'
 start_over.appendChild(p)
 playgame=false
@@ -81,13 +81,16 @@ newgame()
 }
 function newgame(){
 const newgame=document.querySelector('#newgame')
-newgame.addEventListener('click',function(e){
+newgame.addEventListener('click',function(){
   randomNumber=parseInt(Math.random()*100+1)
-   prevguess=[]
+  prevguess=[]
   numguess=1
   guesslot.innerHTML=''
-   remainig.innerHTML=`Attmpets: ${10-numguess}/10`
-   userinput.removeAttribute('disabled')
+  remainig.innerHTML=`Attempts: 10/10`
+  userinput.removeAttribute('disabled')
+  button.removeAttribute('disabled');
+  start_over.removeChild(document.querySelector('.newgame-container'));
+  lower_high.innerHTML = '';
   playgame=true
 })
 }
