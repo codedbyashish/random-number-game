@@ -1,4 +1,4 @@
-const randomNumber=parseInt(Math.random()*100+1)
+let randomNumber=parseInt(Math.random()*100+1)
 console.log(randomNumber);
 
 const button=document.querySelector('.button button')
@@ -58,7 +58,7 @@ function dispalyguess(guess){
   userinput.value= ''
   guesslot.innerHTML+=`${guess}, `
   numguess++;
-  remainig.innerHTML=`Attmpets: ${11-numguess}/10`
+  remainig.innerHTML=`Attmpets: ${10-numguess}/10`
   
 
 }
@@ -66,14 +66,28 @@ function dispalyguess(guess){
 function displayMessGage(messgae){
 lower_high.innerHTML=`<h2>${messgae}</h2>`
 }
-function newgame(){
 
-}
 function endgame(){
 // end game 
 userinput.value=''
 userinput.setAttribute('disabled','')
+button.setAttribute('disabled','')
+const p = document.createElement('div');
 p.classList.add('button')
-p.innerHTML='<h2 id="newgame">start new game</h2>'
+p.innerHTML='<h2 id="newgame">Start New Game</h2>'
 start_over.appendChild(p)
+playgame=false
+newgame()
+}
+function newgame(){
+const newgame=document.querySelector('#newgame')
+newgame.addEventListener('click',function(e){
+  randomNumber=parseInt(Math.random()*100+1)
+   prevguess=[]
+  numguess=1
+  guesslot.innerHTML=''
+   remainig.innerHTML=`Attmpets: ${10-numguess}/10`
+   userinput.removeAttribute('disabled')
+  playgame=true
+})
 }
