@@ -1,4 +1,6 @@
 const randomNumber=parseInt(Math.random()*100+1)
+console.log(randomNumber);
+
 const button=document.querySelector('.button button')
 const userinput=document.querySelector('.input-box input')
 const guesslot=document.querySelector('.perviousgues')
@@ -56,7 +58,7 @@ function dispalyguess(guess){
   userinput.value= ''
   guesslot.innerHTML+=`${guess}, `
   numguess++;
-  remainig.innerHTML=`${10-numguess}`
+  remainig.innerHTML=`Attmpets: ${11-numguess}/10`
   
 
 }
@@ -68,5 +70,10 @@ function newgame(){
 
 }
 function endgame(){
-
+// end game 
+userinput.value=''
+userinput.setAttribute('disabled','')
+p.classList.add('button')
+p.innerHTML='<h2 id="newgame">start new game</h2>'
+start_over.appendChild(p)
 }
