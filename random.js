@@ -26,7 +26,8 @@ if(playgame){
 function validateGuess(guess){
     //  valdition of game
      if(isNaN(guess)){
-        alert('Please Enter the valid Number ')
+      alert('Please enter a valid number between 1 and 100');
+        shakeinput()
      }else if(guess< 1){
       alert('Please Enter a number more than 1 ')
      }else if(guess>100){
@@ -43,6 +44,17 @@ function validateGuess(guess){
         }
      }
 }
+// shake effect when number is no inputed by the user
+function shakeinput(){
+  const input=document.querySelector('.input-box input')
+    input.classList.add('shake');
+    setTimeout(() => {
+    input.classList.remove('shake');
+  }, 400);
+}
+
+
+
 function checkguess(guess){
     //checking the guess
     if(guess===randomNumber){
@@ -54,6 +66,7 @@ function checkguess(guess){
        displayMessGage(`Too high! You might hit the clouds ☁️`)
     }
 }
+
 function dispalyguess(guess){
   userinput.value= ''
   guesslot.innerHTML+=`${guess}, `
