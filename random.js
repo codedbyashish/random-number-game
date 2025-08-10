@@ -1,6 +1,5 @@
+// all query selector
 let randomNumber=parseInt(Math.random()*100+1)
-console.log(randomNumber);
-
 const button=document.querySelector('.button button')
 const userinput=document.querySelector('.input-box input')
 const guesslot=document.querySelector('.perviousgues')
@@ -67,6 +66,7 @@ function checkguess(guess){
     }
 }
 
+// attemps given by user
 function dispalyguess(guess){
   userinput.value= ''
   guesslot.innerHTML+=`${guess}, `
@@ -80,8 +80,8 @@ function displayMessGage(messgae){
 lower_high.innerHTML=`<h2>${messgae}</h2>`
 }
 
+// end game  function
 function endgame(){
-// end game 
 userinput.value=''
 userinput.setAttribute('disabled','')
 button.setAttribute('disabled','')
@@ -92,6 +92,7 @@ start_over.appendChild(p)
 playgame=false
 newgame()
 }
+// new game function
 function newgame(){
 const newgame=document.querySelector('#newgame')
 newgame.addEventListener('click',function(){
