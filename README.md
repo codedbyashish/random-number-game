@@ -12,7 +12,7 @@ Guess the secret number between **1 and 100** within **10 attempts** — but bew
 - 🔄 Option to restart after game over  
 
 ## Screenshot
-<img width="1912" height="886" alt="image" src="https://github.com/user-attachments/assets/ca040e8b-17db-4097-bb4f-d15b4eee8e82" />
+<img width="843" height="692" alt="image" src="https://github.com/user-attachments/assets/637c4663-e5be-40d6-9b71-30ebbece8526" />
 
 <img width="902" height="692" alt="image" src="https://github.com/user-attachments/assets/5ab00c02-2f30-4c5b-8e0b-e5e74e675843" />
 
